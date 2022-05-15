@@ -11,7 +11,7 @@ public class Main {
 		int maxHeight;
 		int dropHeight;
 		int routeLenght;
-		for (int i = 0; i < rockClimberCount; i++) {
+		for (int i = 1; i < rockClimberCount; i++) {
 			System.out.printf("Скалолаз [%d]:\n", i + 1);
 			System.out.print("Максимальная высота: ");
 			maxHeight = scanner.nextInt();
@@ -22,7 +22,7 @@ public class Main {
 			rockClimbers[i] = new RockClimber(maxHeight, dropHeight, routeLenght);
 		}
 		System.out.println("Маршруты скалолазов: ");
-		for (int i = 0; i < rockClimberCount; i++) {
+		for (int i = 1; i < rockClimberCount; i++) {
 			System.out.printf("\nСкалолаз [%d]:\n", i + 1);
 			rockClimbers[i].renderRoute();
 		}
