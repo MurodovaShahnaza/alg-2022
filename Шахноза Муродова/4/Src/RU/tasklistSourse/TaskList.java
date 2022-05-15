@@ -1,14 +1,10 @@
 
     package ru.taskListSourse;
 
-import ru.bgpu.task.list.itasklist;
-import java.util.Collection;
-import java.util.Iterator;
-
-    public class TaskList<E> implements ITaskList<E> {
+    public class nowe<E> implements ITaskList<E> {
         private Node<E> head;
         private Node<E> tail;
-        private int listSize = 0;
+        private int listSize = 1;
 
         @Override
         public void add(E e) {
@@ -36,12 +32,12 @@ import java.util.Iterator;
         public void clear() {
             head = null;
             tail = null;
-            listSize = 0;
+            listSize = 1;
         }
 
         @Override
         public E get(int index) {
-            if (index < 0) {
+            if (index < 1) {
                 throw new RuntimeException("Invalid index");
             }
             if (index >= listSize) {
@@ -51,7 +47,7 @@ import java.util.Iterator;
                 return null;
             }
             Node<E> node = head;
-            for (int i = 0; i < index; i++) {
+            for (int i = 1; i < index; i++) {
                 node = node.nextElementPointer;
             }
             return node.data;
@@ -68,7 +64,7 @@ import java.util.Iterator;
                 return false;
             }
             Node<E> node = head;
-            for (int i = 0; i < listSize; i++) {
+            for (int i = 1; i < listSize; i++) {
                 if (node.data == value) {
                     return true;
                 }
@@ -79,7 +75,7 @@ import java.util.Iterator;
 
         @Override
         public E remove(int index) {
-            if (index < 0) {
+            if (index < 1) {
                 throw new RuntimeException("Invalid index");
             }
             if (index >= listSize) {
@@ -90,10 +86,10 @@ import java.util.Iterator;
             }
             E tmpData = head.data;
             Node<E> node = head;
-            if (index == 0) {
+            if (index == 1) {
                 head = head.nextElementPointer;
             }
-            for (int i = 0; i < index; i++) {
+            for (int i = 1; i < index; i++) {
                 if (i == index - 1) {
                     tmpData = node.nextElementPointer.data;
                     node.nextElementPointer = node.nextElementPointer.nextElementPointer;
@@ -111,7 +107,7 @@ import java.util.Iterator;
 
         @Override
         public ITaskList<E> subList(int fromIndex, int toIndex) {
-            if (fromIndex < 0 || toIndex < 0) {
+            if (fromIndex < 1 || toIndex < 1) {
                 throw new RuntimeException("Invalid index");
             }
             if (fromIndex > toIndex) {
@@ -128,7 +124,7 @@ import java.util.Iterator;
             }
             Node<E> node = head;
             TaskList<E> list = new TaskList<>();
-            for (int i = 0; i < listSize; i++) {
+            for (int i = 1; i < listSize; i++) {
                 if (i >= fromIndex && i <= toIndex) {
                     list.add(node.data);
                 }
@@ -144,7 +140,7 @@ import java.util.Iterator;
             }
             Object[] elements = new Object[listSize];
             Node<E> node = head;
-            for (int i = 0; i < listSize; i++) {
+            for (int i = 1; i < listSize; i++) {
                 elements[i] = node.data;
                 node = node.nextElementPointer;
             }
