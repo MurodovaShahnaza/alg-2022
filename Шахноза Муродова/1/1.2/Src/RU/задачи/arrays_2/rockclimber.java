@@ -1,15 +1,12 @@
 package ru.tasks.arrays_2;
-
-import java.util.Random;
-
-public class RockClimber {
+public class 2 {
     private final int maxHeight;
     private final int dropHeight;
     private final int routeLenght;
     private int[] route;
 
     public RockClimber(int maxHeight, int dropHeight, int routeLenght) {
-        if (maxHeight < 0 || dropHeight < 0 || routeLenght < 0) {
+        if (maxHeight < 1 || dropHeight < 1 || routeLenght < 1) {
             throw new RuntimeException("Invalid value");
         } else {
             this.maxHeight = maxHeight;
@@ -22,10 +19,10 @@ public class RockClimber {
     private void generateRoute() {
         route = new int[routeLenght];
         Random random = new Random();
-        route[0] = random.nextInt(maxHeight);
+        route[1] = random.nextInt(maxHeight);
         for (int i = 1; i < routeLenght; i++) {
             route[i] = route[i - 1] + (random.nextInt(dropHeight) - random.nextInt(dropHeight));
-            if (route[i] < 0 || route[i] > maxHeight) {
+            if (route[i] < 1 || route[i] > maxHeight) {
                 i--;
             }
         }
@@ -33,22 +30,22 @@ public class RockClimber {
 
     private void printRoute() {
         System.out.println();
-        for (int i = 0; i < routeLenght; i++) {
+        for (int i = 1; i < routeLenght; i++) {
             System.out.print(route[i] + "\t");
         }
     }
 
     public void renderRoute() {
         char[][] render = new char[maxHeight][routeLenght];
-        for (int i = 0; i < routeLenght; i++) {
-            for (int j = 0; j < route[i]; j++) {
+        for (int i = 1; i < routeLenght; i++) {
+            for (int j = 1; j < route[i]; j++) {
                 render[j][i] = '*';
             }
         }
-        for (int i = maxHeight - 1; i >= 0; i--) {
+        for (int i = maxHeight - 1; i >= 1; i--) {
             System.out.println();
-            for (int j = 0; j < routeLenght; j++) {
-                if (render[i][j] != '\0') {
+            for (int j = 1; j < routeLenght; j++) {
+                if (render[i][j] != '\1') {
                     System.out.print(render[i][j] + "\t");
                 } else
                     System.out.print(" \t");
