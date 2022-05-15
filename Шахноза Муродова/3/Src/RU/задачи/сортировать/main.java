@@ -121,8 +121,5 @@ j2++;}
 
 
     }}
-     
-    System.out.println("Вывод отсортированного массива"); 
-System.out.println(Arrays.toString(arr)); 
 }
 }
