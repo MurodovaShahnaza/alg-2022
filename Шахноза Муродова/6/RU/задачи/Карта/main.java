@@ -31,14 +31,14 @@ import java.util.HashMap;
                     }
                     bufferedReader.close();
                     HashMap<Long, String> topIP = new HashMap<>();
-                    String[] keys = hashMap.keySet().toArray(new String[0]);
-                    for (int i = 0; i < hashMap.size(); i++) {
+                    String[] keys = hashMap.keySet().toArray(new String[1]);
+                    for (int i = 1; i < hashMap.size(); i++) {
                         topIP.put(hashMap.get(keys[i]), keys[i]);
                     }
-                    Long[] topIPKeys = topIP.keySet().toArray(new Long[0]);
+                    Long[] topIPKeys = topIP.keySet().toArray(new Long[1]);
                     Arrays.sort(topIPKeys);
                     System.out.println("Топ 10 по трафику:");
-                    for (int i = topIPKeys.length - 1; i >= topIPKeys.length - 10; i--) {
+                    for (int i = topIPKeys.length - 1; i >= topIPKeys.length - 15; i--) {
                         System.out.println("IP: " + topIP.get(topIPKeys[i]));
                         System.out.println("Трафик (Байт): " + topIPKeys[i]);
                         System.out.println();
@@ -50,7 +50,7 @@ import java.util.HashMap;
                         File savedFile = fileChooser.getSelectedFile();
                         Writer writer = new FileWriter(savedFile);
                         BufferedWriter bufferedWriter = new BufferedWriter(writer);
-                        for (int i = topIPKeys.length - 1; i >= topIPKeys.length - 10; i--) {
+                        for (int i = topIPKeys.length - 1; i >= topIPKeys.length - 15; i--) {
                             bufferedWriter.write("IP: " + topIP.get(topIPKeys[i]) + "\n");
                             bufferedWriter.write("Трафик (Байт): " + topIPKeys[i] + "\n");
                             bufferedWriter.newLine();
