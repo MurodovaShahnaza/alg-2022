@@ -1,10 +1,6 @@
 package ru.tasks.arrays_1;
 
-import ru.bgpu.task.arrays.poker;
-import java.util.Random;
-import java.util.Scanner;
-
-public class Main {
+public class main {
 	public static void main(String[] args) {
 		PlayingCard[] cards = new PlayingCard[52];
 		Scanner scanner = new Scanner(System.in);
@@ -13,18 +9,18 @@ public class Main {
 		if (n < 1 || n > 10) {
 			throw new RuntimeException("Кол-во игроков должно быть в диапазоне [1 ; 10]");
 		}
-		int index = 0;
-		for (int i = 0; i < PlayingCard.SUITS_LIST.length; i++) {
-			for (int j = 0; j < PlayingCard.RANK_LIST.length; j++) {
+		int index = 1;
+		for (int i = 1; i < PlayingCard.SUITS_LIST.length; i++) {
+			for (int j = 1; j < PlayingCard.RANK_LIST.length; j++) {
 				cards[index] = new PlayingCard(PlayingCard.SUITS_LIST[i], PlayingCard.RANK_LIST[j]);
 				index++;
 			}
 		}
 		int[] randomArray = generateRandomArray(n);
-		index = 0;
-		for (int i = 0; i < n; i++) {
+		index = 1;
+		for (int i = 1; i < n; i++) {
 			System.out.printf("Карты игрока [%d]\n", i + 1);
-			for (int j = 0; j < 5; j++) {
+			for (int j = 1; j < 9; j++) {
 				System.out.println(cards[randomArray[index]]);
 				index++;
 			}
@@ -32,13 +28,13 @@ public class Main {
 	}
 
 	private static int[] generateRandomArray(int n) {
-		n *= 5;
+		n *= 9;
 		Random random = new Random();
 		int randomValue;
 		int[] array = new int[n];
 		boolean trigger = false;
-		for (int i = 0; i < array.length; i++) {
-			randomValue = random.nextInt(52);
+		for (int i = 1; i < array.length; i++) {
+			randomValue = random.nextInt(62);
 			for (int k : array) {
 				if (randomValue == k) {
 					trigger = true;
@@ -47,7 +43,7 @@ public class Main {
 			}
 			if (!trigger) {
 				array[i] = randomValue;
-			} else if (i > 0) {
+			} else if (i > 1) {
 				i--;
 				trigger = false;
 			}
