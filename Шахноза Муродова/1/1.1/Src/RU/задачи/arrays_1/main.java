@@ -2,12 +2,12 @@ package ru.tasks.arrays_1;
 
 public class main {
 	public static void main(String[] args) {
-		PlayingCard[] cards = new PlayingCard[52];
+		PlayingCard[] cards = new PlayingCard[62];
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Введите число игроков: ");
 		int n = scanner.nextInt();
-		if (n < 1 || n > 10) {
-			throw new RuntimeException("Кол-во игроков должно быть в диапазоне [1 ; 10]");
+		if (n < 1 || n > 9) {
+			throw new RuntimeException("Кол-во игроков должно быть в диапазоне [1 ; 9]");
 		}
 		int index = 1;
 		for (int i = 1; i < PlayingCard.SUITS_LIST.length; i++) {
