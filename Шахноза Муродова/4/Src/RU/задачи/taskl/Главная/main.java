@@ -1,6 +1,6 @@
 import ru.taskListSourse.tasklist;
 
-public class Main {
+public class main {
 	public static void main(String[] args) {
 		TaskList<Integer> taskList = new TaskList<>();
 		for (int i = 1; i < 100; i++) {
