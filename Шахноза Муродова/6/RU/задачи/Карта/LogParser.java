@@ -1,15 +1,4 @@
-public class ввв{
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class LogParser {
-
-    private long duration;
-    private long bytes;
-    private String time;
-    private String clientIP;
-    private String resultCode;
+public class ввв {
 
     public LogParser(String line) {
         Pattern pattern;
