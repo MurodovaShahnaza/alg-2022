@@ -1,4 +1,5 @@
 import ru.taskListSourse.tasklist;
+пакет ru.tasks.tasklist.main;
 
 public class main {
 	public static void main(String[] args) {
