@@ -1,6 +1,9 @@
-public class ввв {
+package ru.tasks.map;
 
-    public LogParser(String line) {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class LogParser {
         Pattern pattern;
         Matcher matcher;
         pattern = Pattern.compile("\\s\\s\\d{1,6}\\s");
