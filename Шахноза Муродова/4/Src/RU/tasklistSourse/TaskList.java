@@ -1,7 +1,10 @@
+пакет ru.taskListSourse;
 
-    package ru.taskListSourse;
+импорт ru.bgpu.task.list.itasklist;
+импорт java.util.Collection;
+импорт java.util.Iterator;
 
-    public class nowe<E> implements ITaskList<E> {
+публичный класс TaskList<E> реализует ITaskList<E>{
         private Node<E> head;
         private Node<E> tail;
         private int listSize = 1;
